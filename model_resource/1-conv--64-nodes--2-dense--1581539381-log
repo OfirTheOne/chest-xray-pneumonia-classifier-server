@@ -1,0 +1,44 @@
+1-conv--64-nodes--2-dense--1581539381
+2020-02-12 22:29:41.657745: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2020-02-12 22:29:41.697201: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x7f7fe1d31cd0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2020-02-12 22:29:41.697214: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+Model: "sequential"
+_________________________________________________________________
+Layer (type)                 Output Shape              Param #   
+=================================================================
+conv2d (Conv2D)              (None, 98, 98, 64)        640       
+_________________________________________________________________
+max_pooling2d (MaxPooling2D) (None, 49, 49, 64)        0         
+_________________________________________________________________
+dropout (Dropout)            (None, 49, 49, 64)        0         
+_________________________________________________________________
+flatten (Flatten)            (None, 153664)            0         
+_________________________________________________________________
+dense (Dense)                (None, 64)                9834560   
+_________________________________________________________________
+dense_1 (Dense)              (None, 64)                4160      
+_________________________________________________________________
+dropout_1 (Dropout)          (None, 64)                0         
+_________________________________________________________________
+dense_2 (Dense)              (None, 1)                 65        
+=================================================================
+Total params: 9,839,425
+Trainable params: 9,839,425
+Non-trainable params: 0
+_________________________________________________________________
+Train on 4172 samples, validate on 1044 samples
+Epoch 1/5
+2020-02-12 22:29:43.448556: I tensorflow/core/profiler/lib/profiler_session.cc:225] Profiler session started.
+4172/4172 [==============================] - 29s 7ms/sample - loss: 0.8111 - accuracy: 0.7512 - val_loss: 0.2168 - val_accuracy: 0.9205
+Epoch 2/5
+4172/4172 [==============================] - 25s 6ms/sample - loss: 0.2331 - accuracy: 0.9092 - val_loss: 0.1862 - val_accuracy: 0.9291
+Epoch 3/5
+4172/4172 [==============================] - 25s 6ms/sample - loss: 0.1416 - accuracy: 0.9492 - val_loss: 0.0688 - val_accuracy: 0.9761
+Epoch 4/5
+4172/4172 [==============================] - 24s 6ms/sample - loss: 0.1060 - accuracy: 0.9602 - val_loss: 0.0684 - val_accuracy: 0.9799
+Epoch 5/5
+4172/4172 [==============================] - 24s 6ms/sample - loss: 0.0893 - accuracy: 0.9672 - val_loss: 0.1453 - val_accuracy: 0.9425
+624/624 [==============================] - 1s 1ms/sample - loss: 0.5650 - accuracy: 0.8253
+accuracy_score: 0.8317307692307693
+Saved model to disk
+after restore - accuracy_score: 0.8317307692307693
